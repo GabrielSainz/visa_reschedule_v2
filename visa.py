@@ -389,7 +389,8 @@ if __name__ == "__main__":
             # Exception Occured
             msg = f"Break the loop after exception!\n"
             END_MSG_TITLE = "EXCEPTION"
-            break
+            continue
+            # break
 
 print(msg)
 info_logger(LOG_FILE_NAME, msg)
