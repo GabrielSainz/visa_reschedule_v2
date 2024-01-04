@@ -261,8 +261,8 @@ def get_available_date(dates, first_date=None):
         return result
     if first_date != None:
         PED = datetime.strptime(first_date, "%Y-%m-%d") - timedelta(days=1)
-        PSD = datetime.strptime(PRIOD_START, "%Y-%m-%d")
-        # PSD = datetime.strptime(first_date, "%Y-%m-%d") - timedelta(days=6)
+        # PSD = datetime.strptime(PRIOD_START, "%Y-%m-%d")
+        PSD = datetime.strptime(first_date, "%Y-%m-%d") - timedelta(days=10)
     else:
         PED = datetime.strptime(PRIOD_END, "%Y-%m-%d")
         PSD = datetime.strptime(PRIOD_START, "%Y-%m-%d")
