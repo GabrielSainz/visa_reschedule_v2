@@ -35,7 +35,7 @@ SCHEDULE_ID = config['PERSONAL_INFO']['SCHEDULE_ID']
 FAMILIAR_APPOINTMENT = config['PERSONAL_INFO']['FAMILIAR_APPOINTMENT']
 FAMILIAR_MEMBERS = config['PERSONAL_INFO']['FAMILIAR_MEMBERS'].split(",")
 # Target Period:
-PRIOD_START = config['PERSONAL_INFO']['PRIOD_START']
+PRIOD_START = str(datetime.today() + timedelta(days=8))[:10]
 PRIOD_END = config['PERSONAL_INFO']['PRIOD_END']
 # Embassy Section:
 YOUR_EMBASSY = config['PERSONAL_INFO']['YOUR_EMBASSY']
@@ -256,13 +256,13 @@ def get_available_date(dates, first_date=None):
     # Evaluation of different available dates
     def is_in_period(date, PSD, PED):
         new_date = datetime.strptime(date, "%Y-%m-%d")
-        result = (PED > new_date and new_date > PSD)
+        result = (PED >= new_date and new_date >= PSD)
         # print(f'{new_date.date()} : {result}', end=", ")
         return result
     if first_date != None:
         PED = datetime.strptime(first_date, "%Y-%m-%d") - timedelta(days=1)
         # PSD = datetime.strptime(PRIOD_START, "%Y-%m-%d")
-        PSD = datetime.strptime(first_date, "%Y-%m-%d") - timedelta(days=10)
+        PSD = datetime.strptime(first_date, "%Y-%m-%d") - timedelta(days=7)
     else:
         PED = datetime.strptime(PRIOD_END, "%Y-%m-%d")
         PSD = datetime.strptime(PRIOD_START, "%Y-%m-%d")
