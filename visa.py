@@ -35,7 +35,7 @@ SCHEDULE_ID = config['PERSONAL_INFO']['SCHEDULE_ID']
 FAMILIAR_APPOINTMENT = config['PERSONAL_INFO']['FAMILIAR_APPOINTMENT']
 FAMILIAR_MEMBERS = config['PERSONAL_INFO']['FAMILIAR_MEMBERS'].split(",")
 # Target Period:
-PRIOD_START = str(datetime.today() + timedelta(days=8))[:10]
+PRIOD_START = str(datetime.today() + timedelta(days=3))[:10]
 PRIOD_END = config['PERSONAL_INFO']['PRIOD_END']
 # Embassy Section:
 YOUR_EMBASSY = config['PERSONAL_INFO']['YOUR_EMBASSY']
